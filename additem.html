@@ -1,0 +1,177 @@
+<!doctype html>
+<!-- File       : additem.html
+	 Author     : Marvin Little 
+	 Application: Auto-Care Assitant Application 1.0
+	*************************************************************************************************
+Coming soon:
+	 * Auto-Care Assitant Application 1.5 is in progress which will use AngularJS
+	 * Auto-Care Assitant Application 2.0 will have a MongoDB database with warranty
+	 information, and pictures of the cars.
+-->
+
+<html>
+	<head>
+	    <meta charset="UTF-8" />
+    	<meta name="description" content="Visual Frameworks Assignment-1" />
+    	<meta name="keywords" content="Mobile Develelopment, Visual Frameworks, Car Maintenance, 
+    	Auto-Care, Oil Change, Radiator Flush, Transmission Flush, Spark Plugs, Tire Rotation, Fuel Filter, Air Filter" />
+    	<meta name="robots" content="index, follow" />
+    	<meta name="robots" content="noindex, no follow" />
+    	<meta name="viewport" content="user-scalable=no, width=device-width" />
+    	<meta name="HandheldFriendly" content="True" />
+    	<meta name="MobileOptimized" content="320" />
+<!-- Document Title -->
+    	<title>Auto-Care Service Reminder</title>
+
+		
+<!-- CSS styles will go here. -->
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+    	<link href="css/style.css" rel="stylesheet" type="text/css">
+
+    	<script type="text/javascript" src="script/jquery.js"></script>
+	</head>  
+    
+<!-- Document Body -->
+    <body>
+<!-- Section element wraos all content in the Body -->    
+    	<section class="allContent container" id="allContent">
+<!-- Header section -->    	
+        	<header id="hdr1" data-role="header">
+	        	<a href="index.html"><h1>Auto-Care Service Reminder</h1></a>
+	        </header>
+       	  	
+<!-- Form for user inout starts below. -->	        
+	        <form action="#" method="post" id="vehicleForm">
+		        <fieldset class="build">
+			        <legend>Vehicle Profile</legend>
+                    <br/>
+					<nav role="navbar">
+			        	<p>
+				        	<a href="#" id="displayData" class="btn btn-success">Display Storage</a>
+				        	<a href="#" id="clearData" class="btn btn-warning">Clear Storage</a>
+				        	<a href = "additem.html" id = "addNew" style = "display: none;">Add New Vehicle</a>
+			        	</p>
+			        </nav>
+
+			        <span>* Fields are required</span> 
+			        <ul id="error"></ul>
+			        <ul id="inquiry">
+
+<!-- Vehicle year select with data from javascript for dynamic select  -->			        
+				        <li id="year" class="b">
+				        	<label for="year">Vehicle year</label><br/>
+			        	</li>
+				        <br/>
+
+<!-- Vehicle mileage textfield -->
+						<div class="form-group">				        
+				        <li class="b"><label for="miles" >Vehicle mileage</label>
+				        <input name="miles" id="miles" type="text" size="20" maxlength="20" 
+				        	class="form-control" placeholder="Enter miles (ex. 20321)"></li></div>
+
+					    <br/>
+<!-- Vehicle make textfield -->	
+						<div class="form-group">			        
+					    <li class="b"><label for="make">Vehicle make</label>
+					    <input name="make" id="make" type="text" size="20" maxlength="20"  
+					    	class="form-control" placeholder="Enter make (ex. Acura)"></li>
+					    </div>
+						<br/>
+<!-- Vehicle model textfield -->	
+						<div class="form-group">			        
+						<li class="b"><label for="model">Vehicle model</label>
+						<input name="model"  id="model" type="text" size="20" maxlength="20" 
+							class="form-control" placeholder="Enter model (ex. Integra)"></li></div>
+						<br/>
+<!-- Radio buttons for engine size is below. -->						
+						<li class="lab">Engine size</li>
+						<li class="bl">
+						<input type="radio" name="engineSize" value="4-cylinder" id="enginesize_1">
+					    	4-cylinder</label></li>
+				        <li class="bl">
+				        <label for="enginesize_2">
+					    <input type="radio" name="engineSize" value="6-cylinder" id="enginesize_2">
+			            	6-cylinder</label></li>
+			            <li class="bl">
+			            <label for="enginesize_3">
+				        <input type="radio" name="engineSize" value="8-cylinder" id="enginesize_3">
+				        	8-cylinder</label></li>
+		                <li class="bl">
+		                <label for="enginesize_4">
+			            <input type="radio" name="engineSize" value="10-cylinder" id="enginesize_4">
+				        	10-cylinder</label></li>
+				        <li class="bl">
+				        <label for="enginesize_5">
+					    <input type="radio" name="engineSize" value="12-cylinder" id="enginesize_5">
+				        	12-cylinder</label></li>
+				        <li class="bl">
+				        <label for="enginesize_6">
+				        <input type="radio" name="engineSize" value="16-cylinder" id="enginesize_6">
+				        	16-cylinder</label></li>
+				        <br/>
+			          <!-- Radio buttons for engine boosters (ex. Supercharger and Turbo) -->				                
+				        <li class="lab">High-Performance chargers</li>
+				        <li class="bl">
+				        <label><input type="radio" name="HighPo" value="Supercharged" id="HP_0">
+				        	Supercharged</label>
+				        </li>
+				        <li class="bl">
+				        <label><input type="radio" name="HighPo" value="Turbocharged" id="HP_1">	
+				        	Turbocharged</label>
+				        </li>
+				        <li class="bl">
+				        <label>
+					    <input type="radio" name="HighPo" value="Twin-Turbocharged" id="HP_2">
+					    	Twin-Turbocharged</label>
+					    </li>
+				    </ul>
+					    <br/>
+					    <br/>
+				</fieldset>
+<!-- Second fieldset of sevices for seperation of vehicle info and service info -->			
+			<p>	
+		        <fieldset id="field2" class="build">
+			        <legend>Services</legend>
+			        <ul id="serviceLists">
+<!-- Service type select with multiple selection abilities -->				        
+	                    <li id="services" class="b"><label for="services">Service type</label><br/></li>
+	                    <br/>
+<!-- Service date with date element that works onl;y with Opera and Google Chrome browser or textfield on other browsers -->				        
+	                    <li class="b"><label for="date" >Service Date</label>
+	                    <br/>
+	                    <input type="date" id="date"  class="form-control" 
+	                    	placeholder="Service date (yyyy-mm-dd)"></li>
+	                    <br/>
+
+<!-- Vehicle Warranty range slider -->	                    
+	                    <li id="slided" class="b" ><label for="warranty">Vehicle Warranty</label><br/>
+	                    <input type="range" id="warranty" min="0" max="150000" step="7500" value="0"></li>
+	                    <br/>
+	                    <br/>
+<!-- Notes text area for user notes -->	                    
+	                    <li class="b"><label for="notes">Notes</label>
+	                    <br/>
+	                    <textarea name="notes" cols="35" rows="5" id="notes" 
+	                    class="form-control" placeholder="Enter notes (optional)"></textarea></li>
+	                    <br/>
+	                 <input type="submit" value="Save Vehicle" id="submit" class="btn btn-primary">
+	                 </ul>
+	                 <input name="today" type="hidden" id="today" value="today">
+                </fieldset>
+            </p>
+            </form>
+    	</section>
+    	<script>
+	    	$('#submit').click(function(){
+			    $("html, body").animate({ scrollTop: 0 }, 600);
+				return false;
+		 	});
+		</script>	
+		<script type="text/javascript" src="script/json.js"></script>
+		<script type="text/javascript" src="script/main.js"></script>
+
+
+			  
+ 	</body>
+</html>

@@ -1,0 +1,67 @@
+/* 
+	Marvin Little 
+	Visual Frameworks 
+	Term 02_13 (February 2013)
+	Assignment / Project 2
+
+	body {
+		background-image:url(../images/bg.png);
+	}*/
+	
+	section {
+		font-family: "Times New Roman", Times, serif;
+	}
+	
+	/*h1 {
+		font-family: Arial, Helvetica, sans-serif;
+		background-color:#003;
+		color:#FFF;
+	}
+	
+	h3 {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 20px;
+		background-color:#003;
+		color:#FFF;
+	}*/
+	
+	span {
+		font-style:oblique;
+	}
+	
+
+	li {
+		font-weight:bold;
+		list-style:none;
+		
+	}
+	
+	.inputBlock {
+		display: block;
+	}
+	
+	.b {
+		font-weight:bold;
+		list-style-type:none; 
+	} /* Hide bullets on the addItem page */
+	
+	.bl {
+		font-weight:normal;
+		list-style-type:none; 
+	
+	} /* Hide bullets on the addItem page */
+	
+	
+	.lab {
+		font-style:normal;
+		font-weight:bold;
+		display:block;
+	}
+	
+	#items {
+		height: auto;
+	}
+	
+	#error {
+		color: red;
+	}
